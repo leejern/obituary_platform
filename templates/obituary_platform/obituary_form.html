@@ -1,0 +1,19 @@
+{% extends "obituary_platform/base.html" %}
+{% block title %}New{% endblock title %}
+{% block body %}
+<!-- html form for creating obituary-->
+<h1>Create Obituary</h1>
+<!--bootstrap centered div-->
+<div class="d-flex justify-content-center">
+   <form action="{% url 'create_obituary' %}" method="POST" class="border border-primary p-4 rounded w-75">
+      {% csrf_token %}
+
+
+      {{ form.as_p }}
+      <div class="text-end">
+         <input type="submit" class="btn btn-primary w-25" value="Submit">
+
+      </div>
+   </form>
+</div>
+{% endblock body %}

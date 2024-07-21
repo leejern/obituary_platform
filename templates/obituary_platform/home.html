@@ -1,0 +1,20 @@
+{% extends "obituary_platform/base.html" %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+<!-- html home page that has basic info for obituary website and a url link-->
+<h1>Welcome to the Obituary Platform!</h1>
+<p>This is a simple obituary platform where you can create, and read obituaries.</p>
+<div class='row'>
+   {% for obituary in obituaries %}
+   <div class="card m-auto" style="width: 18rem;">
+      <img src="https://i.pinimg.com/originals/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+         <h5 class="card-title">{{ obituary.name}}</h5>
+         <p class="card-text">From {{ obituary.date_of_birth}} to {{ obituary.date_of_death}}.</p>
+         <a href="{% url "obituary_info" obituary.slug %}" class="btn btn-primary">Read More</a>
+      </div>
+   </div>
+
+   {% endfor %}
+</div>
+{% endblock body %}

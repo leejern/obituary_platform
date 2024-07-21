@@ -1,0 +1,33 @@
+{% extends "obituary_platform/base.html" %}
+{% block title %}Details{% endblock title %}
+{% block meta_description %}Obituary for {{ obituary.name }}{% endblock %}
+{% block meta_keywords %}obituary, {{ obituary.name }}{% endblock %}
+{% block body %}
+
+<!-- html form for creating obituary-->
+<div class="card m-5">
+   <div class="row g-0">
+      <div class="col-md-4">
+         <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+         <div class="card-body">
+            <h3 class="card-title">{{ obituary.name}}</h3>
+            <br>
+            <p class="card-text">Date of Birth: <strong>{{ obituary.date_of_birth}}</strong>.</p>
+            <br>
+            <p class="card-text">Date of Death: <strong>{{ obituary.date_of_death}}</strong>.</p>
+            <br>
+            <p class="card-text">{{ obituary.content}}.</p>
+            <br>
+            <p class="card-text text-end">~<strong>{{ obituary.author}}</strong>.</p>
+            <br>
+         </div>
+      </div>
+      <div class="card-footer text-end">
+         <small class="text-body-secondary">Date Announced {{ obituary.submission_date}}</small>
+      </div>
+   </div>
+</div>
+
+{% endblock body %}
